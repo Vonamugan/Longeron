@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
-    body = db.Column(db.Integer, nullable=False)
+    body = db.Column(db.Text, nullable=False)
     isActive = db.Column(db.Boolean, default=True)
 
     # text = db.Column(db.Text, nullable=False)
@@ -21,7 +21,8 @@ class Item(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    items = Item.query.order_by(Item.id.desc()).all()
+    return render_template('index.html', data=items)
 
 
 @app.route('/login')
@@ -43,16 +44,16 @@ def post():
 def create():
     if request.method == 'POST':
         title = request.form['title']
-        price = request.form['price']
+        body = request.form['body']
 
-        item = Item(title=title, price=price)
+        item = Item(title=title, body=body)
 
         try:
             db.session.add(item)
             db.session.commit()
             return redirect('/')
         except:
-            return "Получилась ошибка("
+            return "Error("
 
     else:
         return render_template('create.html')

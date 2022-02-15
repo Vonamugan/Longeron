@@ -7,8 +7,8 @@
 {% block main %}
 
     <main>
-    <div class="px-4 py-5 my-5 text-center col-lg-6">
-        <div class="col-lg-6" style="max-width: 28rem; margin-left: 25rem;">
+    <div class="px-4 py-5 my-5 container col-lg-6">
+        <div class="col-lg-6 flex-row flex-wrap">
           <h1 class="display-5 fw-bold text-start mb-4">Longeron</h1>
           <p class="lead mb-4 text-start">The newsletter that makes you smarter</p>
           <form class="d-grid d-sm-flex gap-2">
@@ -18,9 +18,23 @@
         </div>
     </div>
     <div>
-        <h5 class="line"><span class="recent-line">Recent</span></h5>
+        <h5 class="line mb-5"><span class="recent-line">Recent</span></h5>
     </div>
+    <div class="container col-md-6">
+        {% for el in data %}
+        <div class="card flex-row flex-wrap border-light mb-5 gap-2">
+            <div class="border-0">
+                <img src="static\images\arrow-up-right-square-fill.svg" width="200" height="200" alt="">
+            </div>
+            <div class="card-block px-2">
+                <h4 class="card-title">{{el.title}}</h4>
+                <p class="card-text">{{el.body}}</p>
+                <a href="#">Read it</a>
+            </div>
+        </div>
+        {% endfor %}
 
+    </div>
     </main>
 
 {% endblock %}
