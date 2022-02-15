@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Longeron</title>
+{% endblock %}
+
+{% block main %}
+
+    <main>
+    <div class="px-4 py-5 my-5 text-center col-lg-6">
+        <div class="col-lg-6" style="max-width: 28rem; margin-left: 25rem;">
+          <h1 class="display-5 fw-bold text-start mb-4">Longeron</h1>
+          <p class="lead mb-4 text-start">The newsletter that makes you smarter</p>
+          <form class="d-grid d-sm-flex gap-2">
+            <input required="required" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email">
+            <button class="btn btn-peri btn-lg px-4 gap-3" type="submit">Subscribe</button>
+          </form>
+        </div>
+    </div>
+    <div>
+        <h5 class="line"><span class="recent-line">Recent</span></h5>
+    </div>
+
+    </main>
+
+{% endblock %}
