@@ -1,6 +1,5 @@
 # Longeron
-A newsletter
-This is a blog I built to run in Python using the Flask.
+A newsletter that I built to run in Python using the Flask.
 
 To run the blog as a demonstration do:
 
