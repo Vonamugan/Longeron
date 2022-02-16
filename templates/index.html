@@ -21,15 +21,15 @@
         <h5 class="line mb-5"><span class="recent-line">Recent</span></h5>
     </div>
     <div class="container col-md-6">
-        {% for el in data %}
+        {% for post in posts %}
         <div class="card flex-row flex-wrap border-light mb-5 gap-2">
             <div class="border-0">
                 <img src="static\images\arrow-up-right-square-fill.svg" width="200" height="200" alt="">
             </div>
             <div class="card-block px-2">
-                <h4 class="card-title">{{el.title}}</h4>
-                <p class="card-text">{{el.body}}</p>
-                <a href="#">Read it</a>
+                <h4 class="card-title">{{post.title}}</h4>
+                <p class="card-text">{{post.body}}</p>
+                <a href="{{ url_for('post', post_id=post.id) }}">Read it</a>
             </div>
         </div>
         {% endfor %}
