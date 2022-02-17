@@ -1,13 +1,15 @@
 # Longeron
-A newsletter that I built to run in Python using the Flask.
+A newsletter that I built to run in WebDev with Python using the Flask.
 
 To run the blog as a demonstration do:
 
     ./app.py
 
 # Still to do
-* Login
-* Commenting, rating
+* Authentication
+* Access permissions
+* Commenting (bonus), rating
 * User registration
-* User editing
+* User editing (drafts etc.)
 * Tests
+* Deploy, Hosting
