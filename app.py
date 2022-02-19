@@ -45,6 +45,7 @@ def login():
 def subscribe():
     return render_template('subscribe.html')
 
+
 @app.route('/create', methods=['POST', 'GET'])
 def create():
     if request.method == 'POST':
